@@ -1,7 +1,5 @@
-import type { NextConfig } from 'next'
-
-const nextConfig: NextConfig = {
-  // Security headers on every response
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   async headers() {
     return [
       {
@@ -30,10 +28,8 @@ const nextConfig: NextConfig = {
     ]
   },
 
-  // Only allow own domain images in production
   images: { domains: [] },
 
-  // Hide server version header
   poweredByHeader: false,
 }
 
