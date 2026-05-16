@@ -316,7 +316,13 @@ export default function HomePage() {
               <h2 className="section-title text-3xl mb-4">{t('home.about.title')}</h2>
               <p className="text-slate-600 leading-relaxed mb-6">{t('home.about.desc')}</p>
               <ul className="space-y-3">
-                {(t('home.about.features') as unknown as string[]).map((feature: string, i: number) => (
+                {[
+                  language === 'hi' ? 'ऑनलाइन शिकायत दर्ज करें' : 'Submit complaints online 24/7',
+                  language === 'hi' ? 'रियल-टाइम ट्रैकिंग ID' : 'Real-time tracking with unique ID',
+                  language === 'hi' ? 'सरकारी योजनाओं की जानकारी' : 'Government scheme notifications',
+                  language === 'hi' ? 'ग्राम सभा की बैठकों की जानकारी' : 'Gram Sabha meeting schedules',
+                  language === 'hi' ? 'द्विभाषी समर्थन (हिंदी + अंग्रेजी)' : 'Bilingual support (Hindi + English)',
+                ].map((feature, i) => (
                   <li key={i} className="flex items-center gap-3">
                     <div className="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
                       <CheckCircle2 size={14} className="text-emerald-600" />

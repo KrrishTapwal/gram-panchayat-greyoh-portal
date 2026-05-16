@@ -62,7 +62,7 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4 text-sm">Services</h3>
             <ul className="space-y-2 text-blue-300 text-sm">
-              {(t('home.about.features') as unknown as string[]).map((f: string, i: number) => (
+              {['Online Complaints', 'Complaint Tracking', 'Govt Schemes', 'Meetings Info', 'Bilingual Portal'].map((f, i) => (
                 <li key={i} className="flex items-start gap-1.5">
                   <span className="text-emerald-400 mt-0.5 flex-shrink-0">✓</span>
                   {f}
