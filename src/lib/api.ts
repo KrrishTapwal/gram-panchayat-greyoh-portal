@@ -109,7 +109,7 @@ async function apiFetch<T>(url: string, options?: RequestInit): Promise<T> {
 // ─── Complaints ────────────────────────────────────────────────────────────
 
 export async function submitComplaint(
-  data: Omit<Complaint, '_id' | 'createdAt' | 'updatedAt' | 'remarks'>
+  data: Omit<Complaint, '_id' | 'createdAt' | 'updatedAt' | 'remarks' | 'trackingId'> & { trackingId?: string }
 ): Promise<string> {
   const res = await apiFetch<{ complaint: Complaint }>('/api/complaints', {
     method:  'POST',

@@ -36,8 +36,8 @@ export default function AdminComplaintsPage() {
       .finally(() => setLoading(false))
   }, [])
 
-  const wards      = [...new Set(complaints.map(c => c.ward))].sort()
-  const categories = [...new Set(complaints.map(c => c.category))].sort()
+  const wards      = Array.from(new Set(complaints.map(c => c.ward))).sort()
+  const categories = Array.from(new Set(complaints.map(c => c.category))).sort()
 
   const filtered = complaints.filter(c => {
     const q = search.toLowerCase()

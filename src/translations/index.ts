@@ -4,7 +4,7 @@ import { hi } from './hi'
 export type Language = 'en' | 'hi'
 export type Translations = typeof en
 
-export const translations: Record<Language, Translations> = { en, hi } as Record<Language, Translations>
+export const translations = { en, hi } as unknown as Record<Language, Translations>
 
 // Deep-get a translation value by dot-separated key path
 export function getTranslation(lang: Language, key: string): string {

@@ -43,7 +43,6 @@ export default function ComplaintsPage() {
         trackingId: '',
         userId:     profile?.id ?? 'anonymous',
         status:     'pending',
-        remarks:    [],
       })
       setTrackingId(tid)
     } catch {

@@ -21,7 +21,7 @@ export default function AlertBanner({ alerts }: AlertBannerProps) {
   const { language } = useLanguage()
   const [dismissed, setDismissed] = useState<Set<string>>(new Set())
 
-  const active = alerts.filter(a => a.isActive && !dismissed.has(a._id ?? ''))
+  const active = alerts.filter(a => a.isActive && !dismissed.has(a._id))
   if (active.length === 0) return null
 
   return (
@@ -49,7 +49,7 @@ export default function AlertBanner({ alerts }: AlertBannerProps) {
               </div>
 
               <button
-                onClick={() => setDismissed(prev => new Set([...prev, alert._id ?? '']))}
+                onClick={() => setDismissed(prev => { const next = new Set(prev); next.add(alert._id); return next })}
                 className="flex-shrink-0 text-white/70 hover:text-white transition-colors"
               >
                 <X size={16} />
